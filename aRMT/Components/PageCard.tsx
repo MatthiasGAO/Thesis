@@ -16,23 +16,24 @@ const PageCard = (props: { title: any; iconName: any; }) => {
     const iconName = props.iconName;
     
     return (
-        <View style={
+        <View id="container" style={
             {
                 backgroundColor: '#CCE8E9',
                 borderRadius: 16,
                 width: cardWidth,
                 height: cardHeight,
                 marginHorizontal: marginWidth,
-                marginTop: marginHeight,
+                marginTop: marginHeight
             }
         }>
-            <MaterialIcons name={iconName} style={{
+            <MaterialIcons id = "icon" name={iconName} style={{
                 color: 'black',
                 fontSize: 30,
                 top: '20%',
                 left: '10%'
             }}></MaterialIcons>
-            <Text style={{
+
+            <Text id = "title" style={{
                 color: 'black',
                 fontSize: 20,
                 top: '50%',

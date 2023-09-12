@@ -2,19 +2,13 @@ import React from "react";
 import PageCard from "../Components/PageCard";
 import { View, Dimensions, Text } from "react-native"
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const Home = () => {
+const Home = (props: {navigation: any}) => {
     // get phone screen size
     const screenWidth = Dimensions.get('window').width;
     const screenHeight = Dimensions.get('window').height;
 
-    /**
-     * 
-     */
-    const openPage = () => {
-        
-    };
-    
     return (
         <View id="Page" style={{ 
             position: "relative",
@@ -51,8 +45,10 @@ const Home = () => {
                 display: "flex",
                 flexDirection: "row",
                 flexWrap: "wrap"
-                }}>
-                <PageCard iconName={"today"} title={"Today"}></PageCard>
+            }}>
+                <TouchableOpacity onPress={()=> props.navigation.navigate('Today') }>
+                    <PageCard iconName={"today"} title={"Today"}></PageCard>
+                </TouchableOpacity>
                 <PageCard iconName={"pending-actions"} title={"Scheduled"}></PageCard>
                 <PageCard iconName={"done"} title={"Finished"}></PageCard>
                 <PageCard iconName={"assignment-late"} title={"Overdue"}></PageCard>
