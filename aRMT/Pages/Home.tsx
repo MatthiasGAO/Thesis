@@ -9,19 +9,17 @@ const Home = (props: {navigation: any}) => {
     const screenWidth = Dimensions.get('window').width;
     const screenHeight = Dimensions.get('window').height;
 
+    const goTaskPage = (pageName: any) => { 
+        props.navigation.navigate(pageName);
+    }
+
     return (
         <View id="Page" style={{ 
             position: "relative",
             height: screenHeight,
             width: screenWidth,
-
+            backgroundColor: "#e8e0c8"
         }}>
-            <MaterialIcons name="notifications" style={{
-                color: 'black',
-                fontSize: 25,
-                top: '6%',
-                left: '80%'
-            }}></MaterialIcons>
             <MaterialIcons name="more-vert" style={{
                 color: 'black',
                 fontSize: 25,
@@ -46,12 +44,12 @@ const Home = (props: {navigation: any}) => {
                 flexDirection: "row",
                 flexWrap: "wrap"
             }}>
-                <TouchableOpacity onPress={()=> props.navigation.navigate('Today') }>
-                    <PageCard iconName={"today"} title={"Today"}></PageCard>
+                <TouchableOpacity onPress={() => { goTaskPage("Today")}}>
+                    <PageCard iconName={"today"} title={"Today"} bgColor={"#33a9ac"}></PageCard>
                 </TouchableOpacity>
-                <PageCard iconName={"pending-actions"} title={"Scheduled"}></PageCard>
-                <PageCard iconName={"done"} title={"Finished"}></PageCard>
-                <PageCard iconName={"assignment-late"} title={"Overdue"}></PageCard>
+                <PageCard iconName={"pending-actions"} title={"Scheduled"} bgColor={"#ffa646"}></PageCard>
+                <PageCard iconName={"done"} title={"Finished"} bgColor={"#f86041"}></PageCard>
+                <PageCard iconName={"assignment-late"} title={"Overdue"} bgColor={"#982062"}></PageCard>
             </View>
         </View>
     )

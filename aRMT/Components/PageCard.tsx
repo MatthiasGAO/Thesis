@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Dimensions, Text } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const PageCard = (props: { title: any; iconName: any; }) => { 
+const PageCard = (props: { title: any; iconName: any; bgColor: any }) => { 
     // get phone screen width and height
     const screenWidth = Dimensions.get('window').width;
     const screenHeight = Dimensions.get('window').height;
@@ -14,18 +14,19 @@ const PageCard = (props: { title: any; iconName: any; }) => {
     // get arguments
     const title = props.title;
     const iconName = props.iconName;
+    const bgColor = props.bgColor;
     
     return (
         <View id="container" style={
             {
-                backgroundColor: '#CCE8E9',
-                borderRadius: 16,
+                backgroundColor: bgColor,
+                borderRadius: 10,
                 width: cardWidth,
-                height: cardHeight,
+                height: cardHeight, 
                 marginHorizontal: marginWidth,
                 marginTop: marginHeight
             }
-        }>
+        }>  
             <MaterialIcons id = "icon" name={iconName} style={{
                 color: 'black',
                 fontSize: 30,
